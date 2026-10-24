@@ -1104,6 +1104,64 @@ intersection = nums & {4, 5}
 difference = nums - {4, 5}
 ```
 
+### Sorting
+| Language | Strings (A-Z) | Numbers (ascending) | Numbers (descending) |
+|----------|---------------|---------------------|---------------------|
+| C++ | `std::sort(vec.begin(), vec.end())` | `std::sort(vec.begin(), vec.end())` | `std::sort(vec.rbegin(), vec.rend())` |
+| Java | `Collections.sort(list)` | `Collections.sort(list)` | `Collections.sort(list, Collections.reverseOrder())` |
+| Python | `sorted(list)` or `list.sort()` | `sorted(list)` or `list.sort()` | `sorted(list, reverse=True)` or `list.sort(reverse=True)` |
+
+```cpp
+// C++
+#include <algorithm>
+#include <vector>
+#include <string>
+
+// Strings
+std::vector<std::string> names = {"Charlie", "Alice", "Bob"};
+std::sort(names.begin(), names.end());  // {"Alice", "Bob", "Charlie"}
+
+// Numbers ascending
+std::vector<int> nums = {5, 2, 8, 1};
+std::sort(nums.begin(), nums.end());  // {1, 2, 5, 8}
+
+// Numbers descending
+std::sort(nums.rbegin(), nums.rend());  // {8, 5, 2, 1}
+```
+
+```java
+// Java
+import java.util.*;
+
+// Strings
+List<String> names = Arrays.asList("Charlie", "Alice", "Bob");
+Collections.sort(names);  // ["Alice", "Bob", "Charlie"]
+
+// Numbers ascending
+List<Integer> nums = Arrays.asList(5, 2, 8, 1);
+Collections.sort(nums);  // [1, 2, 5, 8]
+
+// Numbers descending
+Collections.sort(nums, Collections.reverseOrder());  // [8, 5, 2, 1]
+```
+
+```python
+# Python
+# Strings
+names = ["Charlie", "Alice", "Bob"]
+sorted_names = sorted(names)  # ['Alice', 'Bob', 'Charlie']
+names.sort()  # Sorts in place
+
+# Numbers ascending
+nums = [5, 2, 8, 1]
+sorted_nums = sorted(nums)  # [1, 2, 5, 8]
+nums.sort()  # Sorts in place
+
+# Numbers descending
+sorted_nums_desc = sorted(nums, reverse=True)  # [8, 5, 2, 1]
+nums.sort(reverse=True)  # Sorts in place
+```
+
 ### Dictionaries / Maps
 | Language | Type | Ordered |
 |----------|------|---------|
